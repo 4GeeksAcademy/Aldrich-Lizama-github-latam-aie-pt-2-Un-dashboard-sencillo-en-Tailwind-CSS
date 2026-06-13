@@ -5,185 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>nEfIr | Dashboard Comercial</title>
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <script>
-    (function () {
-      var savedTheme = localStorage.getItem("theme");
-      var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-      if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
-        document.documentElement.classList.add("dark");
-      }
-    })();
-  </script>
-  <style>
-    :root {
-      --bg-top: #f4edf4;
-      --bg-mid: #edf2f8;
-      --bg-bottom: #e9f2ec;
-      --surface: #fffdfd;
-      --surface-soft: #fdf7ff;
-      --surface-muted: #f7f0ff;
-      --line: #e9dff1;
-      --text-strong: #5b5966;
-      --text-main: #636272;
-      --text-soft: #8b88a1;
-      --accent-1: #d4c0ef;
-      --accent-2: #bea4e4;
-      --accent-3: #a88bd6;
-      --card-shadow: 0 8px 24px rgba(150, 126, 182, 0.08);
-    }
-
-    .dark {
-      --bg-top: #111827;
-      --bg-mid: #0f172a;
-      --bg-bottom: #0b1020;
-      --surface: #162133;
-      --surface-soft: #1f2a3d;
-      --surface-muted: #253245;
-      --line: #334155;
-      --text-strong: #f8fafc;
-      --text-main: #dbe7ff;
-      --text-soft: #b6c3da;
-      --accent-1: #4f6b95;
-      --accent-2: #5d7aa8;
-      --accent-3: #6f8fbd;
-      --card-shadow: 0 10px 28px rgba(3, 7, 18, 0.5);
-    }
-
-    * {
-      transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
-    }
-
-    /* Paleta principal para todo el dashboard */
-    body {
-      background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-mid) 55%, var(--bg-bottom) 100%) !important;
-    }
-
-    .bg-white {
-      background-color: var(--surface) !important;
-    }
-
-    .bg-white\/90 {
-      background-color: color-mix(in srgb, var(--surface) 90%, transparent) !important;
-    }
-
-    .text-slate-900 {
-      color: var(--text-strong) !important;
-    }
-
-    .text-slate-800 {
-      color: var(--text-main) !important;
-    }
-
-    .text-slate-700 {
-      color: var(--text-main) !important;
-    }
-
-    .text-slate-600,
-    .text-slate-500 {
-      color: var(--text-soft) !important;
-    }
-
-    .border-slate-300,
-    .border-slate-200 {
-      border-color: var(--line) !important;
-    }
-
-    .bg-slate-50 {
-      background-color: var(--surface-soft) !important;
-    }
-
-    .bg-slate-100 {
-      background-color: var(--surface-muted) !important;
-    }
-
-    .bg-slate-200 {
-      background-color: color-mix(in srgb, var(--surface-soft) 70%, var(--line)) !important;
-    }
-
-    .bg-slate-500 {
-      background-color: var(--accent-1) !important;
-    }
-
-    .bg-slate-600 {
-      background-color: var(--accent-2) !important;
-    }
-
-    .bg-slate-700,
-    .bg-slate-800 {
-      background-color: var(--accent-3) !important;
-    }
-
-    .hover\:bg-slate-50:hover {
-      background-color: color-mix(in srgb, var(--surface-soft) 88%, var(--line)) !important;
-    }
-
-    article {
-      box-shadow: var(--card-shadow);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    article:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 14px 30px rgba(120, 97, 155, 0.16);
-    }
-
-    .dark article:hover {
-      box-shadow: 0 14px 34px rgba(2, 8, 23, 0.7);
-    }
-
-    tbody tr:hover {
-      background-color: color-mix(in srgb, var(--surface-soft) 75%, transparent);
-    }
-
-    a:focus-visible,
-    button:focus-visible {
-      outline: 2px solid var(--accent-2);
-      outline-offset: 2px;
-    }
-  </style>
 </head>
-<body class="min-h-screen bg-slate-100 text-slate-800">
-  <header class="border-b border-slate-200 bg-white/90 backdrop-blur">
+<body class="min-h-screen bg-gradient-to-br from-rose-100 via-fuchsia-100 to-pink-200 text-fuchsia-900">
+  <div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+    <div class="absolute -left-24 top-10 h-72 w-72 rounded-full bg-fuchsia-300/30 blur-3xl"></div>
+    <div class="absolute right-0 top-1/3 h-80 w-80 rounded-full bg-pink-300/25 blur-3xl"></div>
+    <div class="absolute bottom-0 left-1/3 h-72 w-72 rounded-full bg-rose-300/25 blur-3xl"></div>
+  </div>
+  <header class="border-b border-fuchsia-200/70 bg-fuchsia-100/70 backdrop-blur-xl">
     <div class="mx-auto flex w-full max-w-7xl flex-col gap-4 px-4 py-4 sm:px-6 lg:px-8 md:flex-row md:items-center md:justify-between">
       <div>
-        <p class="text-xs font-semibold uppercase tracking-widest text-slate-500">Dashboard influencer</p>
+        <p class="text-xs font-semibold uppercase tracking-widest text-fuchsia-500">Dashboard influencer</p>
         <h1 class="mt-1 text-2xl font-bold sm:text-3xl">nEfIr Social Commerce</h1>
-        <p class="mt-1 text-sm text-slate-600">Seguimiento de resultados en Instagram, TikTok, YouTube y X.</p>
+        <p class="mt-1 text-sm text-fuchsia-700">Seguimiento de resultados en Instagram, TikTok, YouTube y X.</p>
       </div>
       <div class="flex flex-col gap-3 sm:items-end">
-        <button id="theme-toggle" type="button" class="inline-flex w-fit items-center gap-2 rounded-full border border-slate-300 bg-white px-3 py-2 text-xs font-semibold uppercase tracking-wide text-slate-700 hover:bg-slate-50" aria-label="Cambiar tema">
-          <span id="theme-icon">🌙</span>
-          <span id="theme-label">Modo oscuro</span>
-        </button>
-        <div class="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
-          <p class="text-xs uppercase tracking-wide text-slate-500">Comision por venta</p>
-          <p class="text-2xl font-bold text-slate-900">15%</p>
-          <p class="text-xs text-slate-600">Productos: A ($50), B ($120), C ($80)</p>
+        <span class="inline-flex w-fit items-center gap-2 rounded-full border border-fuchsia-300 bg-fuchsia-50 px-3 py-2 text-xs font-semibold uppercase tracking-wide text-fuchsia-800">Reporte mensual</span>
+        <div class="rounded-xl border border-fuchsia-200 bg-fuchsia-50 px-4 py-3">
+          <p class="text-xs uppercase tracking-wide text-fuchsia-500">Comision por venta</p>
+          <p class="text-2xl font-bold text-fuchsia-950">15%</p>
+          <p class="text-xs text-fuchsia-700">Productos: A ($50), B ($120), C ($80)</p>
         </div>
       </div>
     </div>
 
     <nav aria-label="Navegacion principal" class="mx-auto w-full max-w-7xl px-4 pb-4 sm:px-6 lg:px-8">
       <ul class="flex flex-wrap gap-2 text-sm font-medium">
-        <li><a class="rounded-full border border-slate-300 bg-white px-3 py-1.5 hover:bg-slate-50" href="#kpis">KPIs</a></li>
-        <li><a class="rounded-full border border-slate-300 bg-white px-3 py-1.5 hover:bg-slate-50" href="#drivers">Drivers</a></li>
-        <li><a class="rounded-full border border-slate-300 bg-white px-3 py-1.5 hover:bg-slate-50" href="#operaciones">Operaciones</a></li>
+        <li><a class="rounded-full border border-fuchsia-300 bg-fuchsia-100/70 px-3 py-1.5 hover:bg-fuchsia-200" href="#kpis">KPIs</a></li>
+        <li><a class="rounded-full border border-fuchsia-300 bg-fuchsia-100/70 px-3 py-1.5 hover:bg-fuchsia-200" href="#drivers">Drivers</a></li>
+        <li><a class="rounded-full border border-fuchsia-300 bg-fuchsia-100/70 px-3 py-1.5 hover:bg-fuchsia-200" href="#operaciones">Operaciones</a></li>
       </ul>
     </nav>
   </header>
 
   <main class="mx-auto w-full max-w-7xl space-y-8 px-4 py-6 sm:px-6 lg:px-8">
-    <section id="kpis" aria-labelledby="titulo-kpis" class="space-y-4">
+    <section id="kpis" aria-labelledby="titulo-kpis" class="space-y-4 rounded-3xl border border-fuchsia-200/70 bg-fuchsia-50/55 p-4 shadow-sm backdrop-blur-sm sm:p-5">
       <div class="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <h2 id="titulo-kpis" class="text-xl font-bold sm:text-2xl">1. Indicadores principales (KPI)</h2>
-          <p class="text-sm text-slate-600">Vista de resultado: volumen, ingresos, engagement, retencion, rendimiento, satisfaccion y eficiencia.</p>
+          <p class="text-sm text-fuchsia-700">Vista de resultado: volumen, ingresos, engagement, retencion, rendimiento, satisfaccion y eficiencia.</p>
         </div>
-        <span class="inline-flex w-fit rounded-full bg-slate-200 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-slate-700">Resumen KPI</span>
+        <span class="inline-flex w-fit rounded-full bg-fuchsia-200 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-fuchsia-800">Resumen KPI</span>
       </div>
 
       <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
-        <article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+        <article class="rounded-2xl border border-fuchsia-200 bg-fuchsia-50 p-5 shadow-sm">
           <h3 class="font-semibold">Volumen</h3>
           <ul class="mt-3 space-y-2 text-sm">
             <li class="flex justify-between"><span>Ventas</span><strong>990</strong></li>
@@ -193,7 +59,7 @@
           </ul>
         </article>
 
-        <article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+        <article class="rounded-2xl border border-fuchsia-200 bg-fuchsia-50 p-5 shadow-sm">
           <h3 class="font-semibold">Ingresos</h3>
           <ul class="mt-3 space-y-2 text-sm">
             <li class="flex justify-between"><span>Revenue total</span><strong>$77,000</strong></li>
@@ -203,7 +69,7 @@
           </ul>
         </article>
 
-        <article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+        <article class="rounded-2xl border border-fuchsia-200 bg-fuchsia-50 p-5 shadow-sm">
           <h3 class="font-semibold">Engagement</h3>
           <ul class="mt-3 space-y-2 text-sm">
             <li class="flex justify-between"><span>Tasa engagement</span><strong>6.8%</strong></li>
@@ -213,7 +79,7 @@
           </ul>
         </article>
 
-        <article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+        <article class="rounded-2xl border border-fuchsia-200 bg-fuchsia-50 p-5 shadow-sm">
           <h3 class="font-semibold">Retencion</h3>
           <ul class="mt-3 space-y-2 text-sm">
             <li class="flex justify-between"><span>Churn</span><strong>4.2%</strong></li>
@@ -223,7 +89,7 @@
           </ul>
         </article>
 
-        <article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+        <article class="rounded-2xl border border-fuchsia-200 bg-fuchsia-50 p-5 shadow-sm">
           <h3 class="font-semibold">Rendimiento</h3>
           <ul class="mt-3 space-y-2 text-sm">
             <li class="flex justify-between"><span>Conversiones totales</span><strong>1,430</strong></li>
@@ -233,7 +99,7 @@
           </ul>
         </article>
 
-        <article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+        <article class="rounded-2xl border border-fuchsia-200 bg-fuchsia-50 p-5 shadow-sm">
           <h3 class="font-semibold">Satisfaccion</h3>
           <ul class="mt-3 space-y-2 text-sm">
             <li class="flex justify-between"><span>NPS</span><strong>61</strong></li>
@@ -243,19 +109,19 @@
           </ul>
         </article>
 
-        <article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:col-span-2 xl:col-span-2">
+        <article class="rounded-2xl border border-fuchsia-200 bg-fuchsia-50 p-5 shadow-sm sm:col-span-2 xl:col-span-2">
           <h3 class="font-semibold">Eficiencia</h3>
           <div class="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-3 text-sm">
-            <div class="rounded-xl bg-slate-100 p-3">
-              <p class="text-slate-600">Costo por resultado</p>
+            <div class="rounded-xl bg-fuchsia-100 p-3">
+              <p class="text-fuchsia-700">Costo por resultado</p>
               <p class="text-2xl font-bold">$3.20</p>
             </div>
-            <div class="rounded-xl bg-slate-100 p-3">
-              <p class="text-slate-600">Margen promedio</p>
+            <div class="rounded-xl bg-fuchsia-100 p-3">
+              <p class="text-fuchsia-700">Margen promedio</p>
               <p class="text-2xl font-bold">38%</p>
             </div>
-            <div class="rounded-xl bg-slate-100 p-3">
-              <p class="text-slate-600">Tiempo a conversion</p>
+            <div class="rounded-xl bg-fuchsia-100 p-3">
+              <p class="text-fuchsia-700">Tiempo a conversion</p>
               <p class="text-2xl font-bold">2.1 dias</p>
             </div>
           </div>
@@ -263,109 +129,109 @@
       </div>
     </section>
 
-    <section id="drivers" aria-labelledby="titulo-drivers" class="space-y-4">
+    <section id="drivers" aria-labelledby="titulo-drivers" class="space-y-4 rounded-3xl border border-pink-200/70 bg-pink-50/55 p-4 shadow-sm backdrop-blur-sm sm:p-5">
       <div class="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <h2 id="titulo-drivers" class="text-xl font-bold sm:text-2xl">2. Drivers del resultado</h2>
-          <p class="text-sm text-slate-600">Factores que explican el resultado: funnel, plataforma, calidad, producto, actividad y engagement.</p>
+          <p class="text-sm text-fuchsia-700">Factores que explican el resultado: funnel, plataforma, calidad, producto, actividad y engagement.</p>
         </div>
-        <span class="inline-flex w-fit rounded-full bg-slate-200 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-slate-700">Analisis de drivers</span>
+        <span class="inline-flex w-fit rounded-full bg-fuchsia-200 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-fuchsia-800">Analisis de drivers</span>
       </div>
 
       <div class="grid grid-cols-1 gap-4 xl:grid-cols-3">
-        <article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm xl:col-span-2">
+        <article class="rounded-2xl border border-fuchsia-200 bg-fuchsia-50 p-5 shadow-sm xl:col-span-2">
           <h3 class="font-semibold">Conversion por etapas (funnel)</h3>
           <div class="mt-4 space-y-3 text-sm">
             <div>
               <div class="mb-1 flex justify-between"><span>Impresiones</span><strong>1,900,000</strong></div>
-              <div class="h-2 rounded-full bg-slate-200"><div class="h-2 w-full rounded-full bg-slate-700"></div></div>
+              <div class="h-2 rounded-full bg-fuchsia-200"><div class="h-2 w-full rounded-full bg-fuchsia-700"></div></div>
             </div>
             <div>
               <div class="mb-1 flex justify-between"><span>Clics (CTR 2.7%)</span><strong>51,300</strong></div>
-              <div class="h-2 rounded-full bg-slate-200"><div class="h-2 w-2/3 rounded-full bg-slate-600"></div></div>
+              <div class="h-2 rounded-full bg-fuchsia-200"><div class="h-2 w-2/3 rounded-full bg-fuchsia-600"></div></div>
             </div>
             <div>
               <div class="mb-1 flex justify-between"><span>Leads</span><strong>12,800</strong></div>
-              <div class="h-2 rounded-full bg-slate-200"><div class="h-2 w-1/2 rounded-full bg-slate-500"></div></div>
+              <div class="h-2 rounded-full bg-fuchsia-200"><div class="h-2 w-1/2 rounded-full bg-fuchsia-500"></div></div>
             </div>
             <div>
               <div class="mb-1 flex justify-between"><span>Carritos</span><strong>4,200</strong></div>
-              <div class="h-2 rounded-full bg-slate-200"><div class="h-2 w-1/3 rounded-full bg-slate-500"></div></div>
+              <div class="h-2 rounded-full bg-fuchsia-200"><div class="h-2 w-1/3 rounded-full bg-fuchsia-500"></div></div>
             </div>
             <div>
               <div class="mb-1 flex justify-between"><span>Compras</span><strong>990</strong></div>
-              <div class="h-2 rounded-full bg-slate-200"><div class="h-2 w-1/4 rounded-full bg-slate-800"></div></div>
+              <div class="h-2 rounded-full bg-fuchsia-200"><div class="h-2 w-1/4 rounded-full bg-fuchsia-800"></div></div>
             </div>
           </div>
         </article>
 
-        <article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+        <article class="rounded-2xl border border-fuchsia-200 bg-fuchsia-50 p-5 shadow-sm">
           <h3 class="font-semibold">Calidad</h3>
           <div class="mt-4 space-y-3 text-sm">
-            <div class="flex justify-between rounded-xl bg-slate-100 p-3"><span>Leads cualificados</span><strong>68%</strong></div>
-            <div class="flex justify-between rounded-xl bg-slate-100 p-3"><span>Attendance rate</span><strong>74%</strong></div>
-            <div class="flex justify-between rounded-xl bg-slate-100 p-3"><span>Pass rate</span><strong>62%</strong></div>
+            <div class="flex justify-between rounded-xl bg-fuchsia-100 p-3"><span>Leads cualificados</span><strong>68%</strong></div>
+            <div class="flex justify-between rounded-xl bg-fuchsia-100 p-3"><span>Attendance rate</span><strong>74%</strong></div>
+            <div class="flex justify-between rounded-xl bg-fuchsia-100 p-3"><span>Pass rate</span><strong>62%</strong></div>
           </div>
         </article>
       </div>
 
       <div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
-        <article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+        <article class="rounded-2xl border border-fuchsia-200 bg-fuchsia-50 p-5 shadow-sm">
           <h3 class="font-semibold">Rendimiento por plataforma</h3>
           <div class="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 text-sm">
-            <div class="rounded-xl border border-slate-200 p-3">
+            <div class="rounded-xl border border-fuchsia-200 p-3">
               <p class="font-semibold">Instagram</p>
-              <p class="text-slate-600">Alcance: 780K</p>
-              <p class="text-slate-600">Engagement: 7.6%</p>
-              <p class="text-slate-600">Conversiones: 380</p>
+              <p class="text-fuchsia-700">Alcance: 780K</p>
+              <p class="text-fuchsia-700">Engagement: 7.6%</p>
+              <p class="text-fuchsia-700">Conversiones: 380</p>
             </div>
-            <div class="rounded-xl border border-slate-200 p-3">
+            <div class="rounded-xl border border-fuchsia-200 p-3">
               <p class="font-semibold">TikTok</p>
-              <p class="text-slate-600">Alcance: 620K</p>
-              <p class="text-slate-600">Engagement: 9.4%</p>
-              <p class="text-slate-600">Conversiones: 290</p>
+              <p class="text-fuchsia-700">Alcance: 620K</p>
+              <p class="text-fuchsia-700">Engagement: 9.4%</p>
+              <p class="text-fuchsia-700">Conversiones: 290</p>
             </div>
-            <div class="rounded-xl border border-slate-200 p-3">
+            <div class="rounded-xl border border-fuchsia-200 p-3">
               <p class="font-semibold">YouTube</p>
-              <p class="text-slate-600">Alcance: 330K</p>
-              <p class="text-slate-600">Engagement: 5.2%</p>
-              <p class="text-slate-600">Conversiones: 220</p>
+              <p class="text-fuchsia-700">Alcance: 330K</p>
+              <p class="text-fuchsia-700">Engagement: 5.2%</p>
+              <p class="text-fuchsia-700">Conversiones: 220</p>
             </div>
-            <div class="rounded-xl border border-slate-200 p-3">
+            <div class="rounded-xl border border-fuchsia-200 p-3">
               <p class="font-semibold">X</p>
-              <p class="text-slate-600">Alcance: 170K</p>
-              <p class="text-slate-600">Engagement: 3.1%</p>
-              <p class="text-slate-600">Conversiones: 100</p>
+              <p class="text-fuchsia-700">Alcance: 170K</p>
+              <p class="text-fuchsia-700">Engagement: 3.1%</p>
+              <p class="text-fuchsia-700">Conversiones: 100</p>
             </div>
           </div>
         </article>
 
-        <article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+        <article class="rounded-2xl border border-fuchsia-200 bg-fuchsia-50 p-5 shadow-sm">
           <h3 class="font-semibold">Rendimiento por producto</h3>
           <div class="mt-4 space-y-4 text-sm">
             <div>
               <div class="flex justify-between"><span>Producto B ($120)</span><strong>$4,680 comision</strong></div>
-              <div class="mt-1 h-2 rounded-full bg-slate-200"><div class="h-2 w-5/6 rounded-full bg-slate-700"></div></div>
+              <div class="mt-1 h-2 rounded-full bg-fuchsia-200"><div class="h-2 w-5/6 rounded-full bg-fuchsia-700"></div></div>
             </div>
             <div>
               <div class="flex justify-between"><span>Producto C ($80)</span><strong>$3,720 comision</strong></div>
-              <div class="mt-1 h-2 rounded-full bg-slate-200"><div class="h-2 w-2/3 rounded-full bg-slate-600"></div></div>
+              <div class="mt-1 h-2 rounded-full bg-fuchsia-200"><div class="h-2 w-2/3 rounded-full bg-fuchsia-600"></div></div>
             </div>
             <div>
               <div class="flex justify-between"><span>Producto A ($50)</span><strong>$3,150 comision</strong></div>
-              <div class="mt-1 h-2 rounded-full bg-slate-200"><div class="h-2 w-1/2 rounded-full bg-slate-500"></div></div>
+              <div class="mt-1 h-2 rounded-full bg-fuchsia-200"><div class="h-2 w-1/2 rounded-full bg-fuchsia-500"></div></div>
             </div>
           </div>
         </article>
       </div>
 
       <div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
-        <article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+        <article class="rounded-2xl border border-fuchsia-200 bg-fuchsia-50 p-5 shadow-sm">
           <h3 class="font-semibold">Actividad por plataforma</h3>
           <div class="mt-4 overflow-x-auto">
             <table class="min-w-full text-sm">
               <thead>
-                <tr class="border-b border-slate-200 text-left">
+                <tr class="border-b border-fuchsia-200 text-left">
                   <th class="py-2 pr-4">Plataforma</th>
                   <th class="py-2 pr-4">Posts</th>
                   <th class="py-2 pr-4">Stories</th>
@@ -373,21 +239,21 @@
                 </tr>
               </thead>
               <tbody>
-                <tr class="border-b border-slate-200"><td class="py-2 pr-4">Instagram</td><td>34</td><td>120</td><td>26</td></tr>
-                <tr class="border-b border-slate-200"><td class="py-2 pr-4">TikTok</td><td>20</td><td>0</td><td>42</td></tr>
-                <tr class="border-b border-slate-200"><td class="py-2 pr-4">YouTube</td><td>8</td><td>12</td><td>16</td></tr>
+                <tr class="border-b border-fuchsia-200"><td class="py-2 pr-4">Instagram</td><td>34</td><td>120</td><td>26</td></tr>
+                <tr class="border-b border-fuchsia-200"><td class="py-2 pr-4">TikTok</td><td>20</td><td>0</td><td>42</td></tr>
+                <tr class="border-b border-fuchsia-200"><td class="py-2 pr-4">YouTube</td><td>8</td><td>12</td><td>16</td></tr>
                 <tr><td class="py-2 pr-4">X</td><td>58</td><td>0</td><td>10</td></tr>
               </tbody>
             </table>
           </div>
         </article>
 
-        <article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+        <article class="rounded-2xl border border-fuchsia-200 bg-fuchsia-50 p-5 shadow-sm">
           <h3 class="font-semibold">Engagement por plataforma</h3>
           <div class="mt-4 overflow-x-auto">
             <table class="min-w-full text-sm">
               <thead>
-                <tr class="border-b border-slate-200 text-left">
+                <tr class="border-b border-fuchsia-200 text-left">
                   <th class="py-2 pr-4">Plataforma</th>
                   <th class="py-2 pr-4">Me gusta</th>
                   <th class="py-2 pr-4">Comentarios</th>
@@ -396,9 +262,9 @@
                 </tr>
               </thead>
               <tbody>
-                <tr class="border-b border-slate-200"><td class="py-2 pr-4">Instagram</td><td>52,400</td><td>4,820</td><td>7,900</td><td>11,300</td></tr>
-                <tr class="border-b border-slate-200"><td class="py-2 pr-4">TikTok</td><td>36,700</td><td>3,420</td><td>9,200</td><td>5,620</td></tr>
-                <tr class="border-b border-slate-200"><td class="py-2 pr-4">YouTube</td><td>17,200</td><td>2,180</td><td>4,050</td><td>3,610</td></tr>
+                <tr class="border-b border-fuchsia-200"><td class="py-2 pr-4">Instagram</td><td>52,400</td><td>4,820</td><td>7,900</td><td>11,300</td></tr>
+                <tr class="border-b border-fuchsia-200"><td class="py-2 pr-4">TikTok</td><td>36,700</td><td>3,420</td><td>9,200</td><td>5,620</td></tr>
+                <tr class="border-b border-fuchsia-200"><td class="py-2 pr-4">YouTube</td><td>17,200</td><td>2,180</td><td>4,050</td><td>3,610</td></tr>
                 <tr><td class="py-2 pr-4">X</td><td>8,100</td><td>1,240</td><td>1,890</td><td>1,600</td></tr>
               </tbody>
             </table>
@@ -407,21 +273,21 @@
       </div>
     </section>
 
-    <section id="operaciones" aria-labelledby="titulo-operaciones" class="space-y-4">
+    <section id="operaciones" aria-labelledby="titulo-operaciones" class="space-y-4 rounded-3xl border border-rose-200/70 bg-rose-50/55 p-4 shadow-sm backdrop-blur-sm sm:p-5">
       <div class="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <h2 id="titulo-operaciones" class="text-xl font-bold sm:text-2xl">3. Detalles operacionales</h2>
-          <p class="text-sm text-slate-600">Tablas y listados para seguimiento operativo, comparacion y alertas.</p>
+          <p class="text-sm text-fuchsia-700">Tablas y listados para seguimiento operativo, comparacion y alertas.</p>
         </div>
-        <span class="inline-flex w-fit rounded-full bg-slate-200 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-slate-700">Seguimiento operativo</span>
+        <span class="inline-flex w-fit rounded-full bg-fuchsia-200 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-fuchsia-800">Seguimiento operativo</span>
       </div>
 
-      <article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+      <article class="rounded-2xl border border-fuchsia-200 bg-fuchsia-50 p-5 shadow-sm">
         <h3 class="font-semibold">Tabla de productos</h3>
         <div class="mt-4 overflow-x-auto">
           <table class="min-w-full text-sm">
             <thead>
-              <tr class="border-b border-slate-200 text-left">
+              <tr class="border-b border-fuchsia-200 text-left">
                 <th class="py-2 pr-4">Producto</th>
                 <th class="py-2 pr-4">Precio</th>
                 <th class="py-2 pr-4">Conversiones</th>
@@ -430,20 +296,20 @@
               </tr>
             </thead>
             <tbody>
-              <tr class="border-b border-slate-200"><td class="py-2 pr-4">Producto A</td><td>$50</td><td>420</td><td>$3,150</td><td>31.3%</td></tr>
-              <tr class="border-b border-slate-200"><td class="py-2 pr-4">Producto B</td><td>$120</td><td>260</td><td>$4,680</td><td>20.0%</td></tr>
+              <tr class="border-b border-fuchsia-200"><td class="py-2 pr-4">Producto A</td><td>$50</td><td>420</td><td>$3,150</td><td>31.3%</td></tr>
+              <tr class="border-b border-fuchsia-200"><td class="py-2 pr-4">Producto B</td><td>$120</td><td>260</td><td>$4,680</td><td>20.0%</td></tr>
               <tr><td class="py-2 pr-4">Producto C</td><td>$80</td><td>310</td><td>$3,720</td><td>32.9%</td></tr>
             </tbody>
           </table>
         </div>
       </article>
 
-      <article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+      <article class="rounded-2xl border border-fuchsia-200 bg-fuchsia-50 p-5 shadow-sm">
         <h3 class="font-semibold">Tabla de plataformas</h3>
         <div class="mt-4 overflow-x-auto">
           <table class="min-w-full text-sm">
             <thead>
-              <tr class="border-b border-slate-200 text-left">
+              <tr class="border-b border-fuchsia-200 text-left">
                 <th class="py-2 pr-4">Plataforma</th>
                 <th class="py-2 pr-4">Alcance</th>
                 <th class="py-2 pr-4">Engagement</th>
@@ -452,9 +318,9 @@
               </tr>
             </thead>
             <tbody>
-              <tr class="border-b border-slate-200"><td class="py-2 pr-4">Instagram</td><td>780K</td><td>7.6%</td><td>380</td><td>Mayor volumen de ventas</td></tr>
-              <tr class="border-b border-slate-200"><td class="py-2 pr-4">TikTok</td><td>620K</td><td>9.4%</td><td>290</td><td>Engagement mas alto</td></tr>
-              <tr class="border-b border-slate-200"><td class="py-2 pr-4">YouTube</td><td>330K</td><td>5.2%</td><td>220</td><td>Mayor ticket medio</td></tr>
+              <tr class="border-b border-fuchsia-200"><td class="py-2 pr-4">Instagram</td><td>780K</td><td>7.6%</td><td>380</td><td>Mayor volumen de ventas</td></tr>
+              <tr class="border-b border-fuchsia-200"><td class="py-2 pr-4">TikTok</td><td>620K</td><td>9.4%</td><td>290</td><td>Engagement mas alto</td></tr>
+              <tr class="border-b border-fuchsia-200"><td class="py-2 pr-4">YouTube</td><td>330K</td><td>5.2%</td><td>220</td><td>Mayor ticket medio</td></tr>
               <tr><td class="py-2 pr-4">X</td><td>170K</td><td>3.1%</td><td>100</td><td>Costo por resultado mas bajo</td></tr>
             </tbody>
           </table>
@@ -462,12 +328,12 @@
       </article>
 
       <div class="grid grid-cols-1 gap-4 xl:grid-cols-3">
-        <article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm xl:col-span-2">
+        <article class="rounded-2xl border border-fuchsia-200 bg-fuchsia-50 p-5 shadow-sm xl:col-span-2">
           <h3 class="font-semibold">Tabla de campanas</h3>
           <div class="mt-4 overflow-x-auto">
             <table class="min-w-full text-sm">
               <thead>
-                <tr class="border-b border-slate-200 text-left">
+                <tr class="border-b border-fuchsia-200 text-left">
                   <th class="py-2 pr-4">Campana</th>
                   <th class="py-2 pr-4">Fechas</th>
                   <th class="py-2 pr-4">Productos promocionados</th>
@@ -475,28 +341,28 @@
                 </tr>
               </thead>
               <tbody>
-                <tr class="border-b border-slate-200"><td class="py-2 pr-4">Summer Skin</td><td>01/05 - 15/05</td><td>A + C</td><td>310 conversiones, $2,980 comision</td></tr>
-                <tr class="border-b border-slate-200"><td class="py-2 pr-4">Smart Home Week</td><td>16/05 - 28/05</td><td>B</td><td>180 conversiones, $3,240 comision</td></tr>
+                <tr class="border-b border-fuchsia-200"><td class="py-2 pr-4">Summer Skin</td><td>01/05 - 15/05</td><td>A + C</td><td>310 conversiones, $2,980 comision</td></tr>
+                <tr class="border-b border-fuchsia-200"><td class="py-2 pr-4">Smart Home Week</td><td>16/05 - 28/05</td><td>B</td><td>180 conversiones, $3,240 comision</td></tr>
                 <tr><td class="py-2 pr-4">Bundle Creator</td><td>29/05 - 10/06</td><td>A + B + C</td><td>500 conversiones, $5,330 comision</td></tr>
               </tbody>
             </table>
           </div>
         </article>
 
-        <article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+        <article class="rounded-2xl border border-fuchsia-200 bg-fuchsia-50 p-5 shadow-sm">
           <h3 class="font-semibold">Alertas operativas</h3>
           <ul class="mt-4 space-y-3 text-sm">
-            <li class="rounded-xl border border-slate-200 p-3">
+            <li class="rounded-xl border border-fuchsia-200 p-3">
               <p class="font-semibold">Atencion en X</p>
-              <p class="text-slate-600">Conversion por debajo del objetivo semanal (-12%).</p>
+              <p class="text-fuchsia-700">Conversion por debajo del objetivo semanal (-12%).</p>
             </li>
-            <li class="rounded-xl border border-slate-200 p-3">
+            <li class="rounded-xl border border-fuchsia-200 p-3">
               <p class="font-semibold">Oportunidad en TikTok</p>
-              <p class="text-slate-600">Subir 3 videos extra puede aportar +9% en leads.</p>
+              <p class="text-fuchsia-700">Subir 3 videos extra puede aportar +9% en leads.</p>
             </li>
-            <li class="rounded-xl border border-slate-200 p-3">
+            <li class="rounded-xl border border-fuchsia-200 p-3">
               <p class="font-semibold">Producto B</p>
-              <p class="text-slate-600">Mayor comision total; mantener inversion en YouTube.</p>
+              <p class="text-fuchsia-700">Mayor comision total; mantener inversion en YouTube.</p>
             </li>
           </ul>
         </article>
@@ -504,28 +370,5 @@
     </section>
   </main>
 
-  <script>
-    (function () {
-      var root = document.documentElement;
-      var toggle = document.getElementById("theme-toggle");
-      var label = document.getElementById("theme-label");
-      var icon = document.getElementById("theme-icon");
-
-      function syncThemeButton() {
-        var darkEnabled = root.classList.contains("dark");
-        label.textContent = darkEnabled ? "Modo claro" : "Modo oscuro";
-        icon.textContent = darkEnabled ? "☀️" : "🌙";
-        toggle.setAttribute("aria-pressed", String(darkEnabled));
-      }
-
-      toggle.addEventListener("click", function () {
-        root.classList.toggle("dark");
-        localStorage.setItem("theme", root.classList.contains("dark") ? "dark" : "light");
-        syncThemeButton();
-      });
-
-      syncThemeButton();
-    })();
-  </script>
 </body>
 </html>
